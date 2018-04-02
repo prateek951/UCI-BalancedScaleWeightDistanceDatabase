@@ -28,3 +28,12 @@ def split_dataset(dataset):
 
     return X,Y,X_train,X_test,Y_train,Y_test
 
+# Function to perform training with giniIndex
+
+def train_with_gini(X_train,X_test,Y_train):
+     # DECISION TREE CLASSIFIER ALGORITHM
+        # Create the decision tree classifier
+        decision_tree_gini_classifier = DecisionTreeClassifier(criterion="gini",random_state=100,max_depth=3,min_samples_leaf=5)
+        # Train the classifier on the training set
+        decision_tree_gini_classifier.fit(X_train,Y_train)
+        return decision_tree_gini_classifier
