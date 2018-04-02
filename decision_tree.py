@@ -60,6 +60,23 @@ def prediction(X_test,classifier):
 def compute_accuracy(y_test,y_pred):
     print("Confusion Matrix:",confusion_matrix(y_test,y_pred))
     print("Accuracy Score :", accuracy_score(y_test,y_pred))
-    print("Classification Report :",classification_report(y_true,y_pred))
+    print("Classification Report :",classification_report(y_test,y_pred))
+
+# Main method
+def main():
+    data = import_dataset()
+    X,Y,X_train,X_test,Y_train,Y_test = split_dataset(data)
+    classifier_gini = train_with_gini(X_train,X_test,Y_train)
+    classifier_entropy = train_with_entropy(X_train,X_test,Y_train)
+    print("Results Using the Gini Index")
+    prediction_gini = prediction(X_test,classifier_gini)
+    compute_accuracy(Y_test,prediction_gini)
+
+    print("Results Using Entropy")
+    prediction_entropy = prediction(X_test,classifier_entropy)
+    compute_accuracy(Y_test,prediction_entropy)
+
+if __name__ == "__main__":
+    main()
 
     
