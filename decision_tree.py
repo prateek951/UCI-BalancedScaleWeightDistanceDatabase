@@ -46,5 +46,13 @@ def train_with_entropy(X_train,X_test,Y_train):
         # Train the classifier on the training set
         decision_tree_entropy_classifier.fit(X_train,Y_train)
         return decision_tree_entropy_classifier
-    
+
+#  Function to make predictions
+
+def prediction(X_test,classifier):
+    y_pred = classifier.predict(X_test)
+    print("Predicted values")
+    print(y_pred)
+    return y_pred
+
     
