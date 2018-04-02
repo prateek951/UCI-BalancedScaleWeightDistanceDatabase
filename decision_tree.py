@@ -17,3 +17,14 @@ def import_dataset():
     print(len(dataset))
     print(dataset.head())
     return dataset
+
+# Function to split the dataset
+def split_dataset(dataset):
+    X = dataset.values[:,1:5]
+    Y = dataset.values[:,0]
+
+    # Perform the split 
+    X_train,X_test,Y_train,Y_test = train_test_split(X,Y,test_size=.3,random_state=100)
+
+    return X,Y,X_train,X_test,Y_train,Y_test
+
