@@ -37,3 +37,14 @@ def train_with_gini(X_train,X_test,Y_train):
         # Train the classifier on the training set
         decision_tree_gini_classifier.fit(X_train,Y_train)
         return decision_tree_gini_classifier
+
+#  Function to perform training with entropy
+def train_with_entropy(X_train,X_test,Y_train):
+     # DECISION TREE CLASSIFIER ALGORITHM
+        # Create the decision tree classifier
+        decision_tree_entropy_classifier = DecisionTreeClassifier(criterion="entropy",random_state=100,max_depth=3,min_samples_leaf=5)
+        # Train the classifier on the training set
+        decision_tree_entropy_classifier.fit(X_train,Y_train)
+        return decision_tree_entropy_classifier
+    
+    
