@@ -55,4 +55,11 @@ def prediction(X_test,classifier):
     print(y_pred)
     return y_pred
 
+# Functions to compute accuracy
+
+def compute_accuracy(y_test,y_pred):
+    print("Confusion Matrix:",confusion_matrix(y_test,y_pred))
+    print("Accuracy Score :", accuracy_score(y_test,y_pred))
+    print("Classification Report :",classification_report(y_true,y_pred))
+
     
